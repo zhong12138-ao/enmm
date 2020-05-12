@@ -1,0 +1,116 @@
+@font-face {
+    font-family: lishu; 
+    src: url(../font/lishu.TTF);
+    }
+@font-face {
+    font-family: gupu; 
+    src: url(../font/gupu.ttf);
+}
+
+body {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+	height: 100%;
+	background-image: url("../image/common/cardBG.png");
+	cursor: url(../image/common/mouse.ico),auto;
+}
+ 	
+
+#head{
+    position: fixed;
+    top:10px;
+    width: 1920px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #000000 0;  
+    z-index: 1;
+}
+
+#head p{
+    margin: 0;
+    font-size: 70px;
+    text-shadow:0 4px 2px #fafa32ca;
+    color: #fff;
+    font-family: lishu;
+}
+
+#conn{
+	position:absolute;
+	top:90px;
+    width: 1920px; 
+    height: 850px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+}
+
+#card{
+	position:absolute;
+	top:0;
+	left:0;
+	width:1400px;
+	height:850px;
+	overflow: hidden;
+	
+}
+
+ul {
+	position:relative;
+	left:180px;
+	top:50px;
+	list-style: none;
+	padding: 0;
+	width: 1000px;
+	height: 600px;
+}
+
+li {
+	background-color: #fff;
+	border: 1px solid #bbb;
+}
+
+li.roundabout-in-focus {
+	cursor: default;
+}
+
+.cp:hover{
+	border:3px solid #4169E1;
+}
+ 
+#cardShow{
+	position: absolute;
+	left:1420px;
+	top:0px;
+	width:500px;
+	height: 850px;
+	overflow: hidden;
+	text-align: center;
+	background-image: url("../image/common/zongheng.jpg");
+	background-size: 100% 100%;
+}	
+#cardShow img{
+	position:relative;
+	display:none;
+	left:90px;
+	top:30px;
+	width:300px;
+	height: 420px;
+	margin-bottom: 50px;
+}
+#cardShow p{
+	font-family: gupu;
+	font-size: 30px;
+	margin: 0;
+	color:white;
+}
+p yellow{
+	color:yellow;
+}

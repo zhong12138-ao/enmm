@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ck.dao.CardMapper" >
+  <!-- 查询用户武将操作 -->
+	<select id="getUserCard" parameterType="String" resultType="com.ck.pojo.User_card">
+		select * from user_card where user_id = #{user_id}
+	</select>
+	<!-- 单抽 -->
+	<select id="getOne" parameterType="int" resultType="com.ck.pojo.Card_type">
+		select * from card where type=#{type} order by rand() limit 1
+	</select>
+	<!-- 五连抽抽 -->
+	<select id="getFive" parameterType="int" resultType="com.ck.pojo.Card_type">
+		select * from card where type=#{type} and generals_star <![CDATA[ <= ]]> 4 order by rand() limit 1,5
+	</select>
+	<!-- 特殊单抽 -->
+	<select id="getOneSpe" parameterType="int" resultType="com.ck.pojo.Card_type">
+		select * from card where type=#{type} and generals_star <![CDATA[ >= ]]> 4 order by rand() limit 1
+	</select>
+	<!-- 更新用户卡包 -->
+	<insert id="updateUC">
+		insert into user_card values(null,#{user_id},#{card_id},#{card_name},#{card_image},#{card_star},#{card_level})
+	</insert>
+	<!-- 获取一个type所有卡牌 -->
+	<select id="getAll" parameterType="int" resultType="com.ck.pojo.Card_type">
+		select * from card where type=#{type}
+	</select>
+	
+	<!-- 获取已拥有卡牌牌 -->
+	<select id="seleteOwnCard" resultType="com.ck.pojo.Card_type">
+		select * from card c,(SELECT * from user_card where user_id=#{user_id})u where c.card_id=u.card_id GROUP BY u.card_id desc
+	</select>
+	
+	<!-- 获取未拥有卡牌牌 -->
+	<select id="seleteNotOwnCard" resultType="com.ck.pojo.Card_type">
+		SELECT c.* FROM card c LEFT JOIN (SELECT * from user_card where user_id=#{user_id})u 
+			ON c.card_id = u.card_id
+		WHERE u.card_id IS NULL order by c.card_id desc
+	</select>
+	
+	
+	<!-- 获取兑换信息 -->
+	<select id="getDuiHuanInfo" parameterType="int" resultType="com.ck.pojo.User_card">
+		select * from user_card where card_id=#{card_id} limit 1
+	</select>
+	
+	<!-- 获取兑换信息 -->
+	<select id="getDuiHuan" parameterType="int" resultType="com.ck.pojo.Precious_card">
+		select * from diancang where id=#{id}
+	</select>
+	
+	<!-- 更新典藏卡包 -->
+	<update id="updateDC" parameterType="int">
+		update diancang set state=1 where card_id=#{card_id}
+	</update>
+	
+	<!-- 删除兑换典藏卡的其他卡 -->
+	<delete id="deleteDC" parameterType="int">
+		delete from user_card where card_id=#{card_id} limit 1
+	</delete>
+	
+	<!-- 从卡包获取一张武将信息 -->
+	<select id="getTC_one" parameterType="int" resultType="com.ck.pojo.Card_type">
+		select * from card where card_id = #{card_id}
+	</select>
+	
+	<!-- 从我的武将里获取一张武将信息 -->
+	<select id="get_user_one_card" parameterType="int" resultType="com.ck.pojo.User_card">
+		select * from user_card where id = #{id}
+	</select>
+	
+	<!-- 从我的武将里获取指定武将信息 -->
+	<select id="getOneUserCard" resultType="com.ck.pojo.User_card">
+		select * from user_card where user_id = #{user_id} and card_id=#{card_id}
+	</select>
+	
+	<!-- 转换战法经验 -->
+	<select id="selectStarCard" parameterType="int" resultType="java.lang.Integer">
+		select count(card_star) from user_card where card_star=#{card_star} and card_level=1
+	</select>
+	<delete id="deleteUC" parameterType="int">
+		delete from user_card where card_star=#{card_star} and card_level=1
+	</delete>
+	<!-- 转换一张武将为战法经验 -->
+	<delete id="del_user_one_card" parameterType="int">
+		delete from user_card where id=#{id}
+	</delete>
+	
+	<!-- 升级 -->
+	<update id="uplevel" >
+		update user_card set card_level=#{card_level} where id=#{id}
+	</update>
+	
+	
+	
+	<!-- 更新卡牌碎片 -->
+	<update id="updateCard_piece" >
+		update card_piece set state=1 where id=#{id}
+	</update>
+	
+	<!-- 更新用户碎片 -->
+	<update id="updateUser_piece" >
+		update user_piece set fragment_num=#{fragment_num} where id=#{id}
+	</update>
+	
+	<!-- 获取一个碎片 -->
+	<select id="getOnePiece" parameterType="int" resultType="com.ck.pojo.Card_piece">
+		select * from card_piece where id=#{id}
+	</select>
+	
+	<!-- 插入用户碎片 -->
+	<insert id="insertUser_piece" parameterType="com.ck.pojo.User_piece">
+		insert into user_piece values(null,#{user_id},#{fragment_id},#{fragment_name},#{fragment_num},#{fragment_image})
+	</insert>
+	
+		<!-- 查询用户碎片 -->
+	<select id="seleteUser_piece" resultType="com.ck.pojo.User_piece">
+		select * from user_piece where user_id=#{user_id} and fragment_id=#{fragment_id}
+	</select>
+</mapper>

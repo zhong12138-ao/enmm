@@ -1,0 +1,76 @@
+@font-face {
+    font-family: lishu; 
+    src: url(../font/lishu.TTF);
+    }
+@font-face {
+    font-family: gupu; 
+    src: url(../font/gupu.ttf);
+    }   
+
+::-webkit-scrollbar{
+    display:none;
+    }
+
+
+body{
+    margin: 0;
+    overflow-y: hidden;
+    background-attachment: fixed;
+    background-image: url(../image/common/cardBG.png) ;
+    background-repeat: no-repeat;
+    cursor: url(../image/common/mouse.ico),auto;
+}
+#back_btn{
+	display: none;
+}
+
+#head{
+    position: fixed;
+    top:10px;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #000000 0;  
+    z-index: 4;
+}
+
+#head p{
+    margin: 0;
+    font-size: 70px;
+    text-shadow:0 4px 2px #fafa32ca;
+    color: #fff;
+    font-family: lishu;
+}
+
+#msg p{
+    position:absolute;
+    margin:0;
+    top:20px;
+    width:100%;
+    font-family: gupu;
+}
+
+
+#conn{
+	position:absolute;
+    padding-top: 180px;
+    padding-bottom: 90px;
+    white-space:nowrap;
+    margin-left:192px;
+    width: 3000px; 
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#dh1,#dh2,#dh3,#dh4,#dh5,#dh6,#dh7,#dh8,#dh9 {
+    display:inline-block
+}
+.dh {
+    height: 680px;
+}
+
+
+
+

@@ -1,0 +1,170 @@
+body{
+	  position:absolute;
+      margin: 0;
+      bottom:0;
+      PADDING-RIGHT: 0px; 
+      PADDING-LEFT: 0px; 
+      FONT-SIZE: 12px; 
+      PADDING-BOTTOM: 0px; 
+      LINE-HEIGHT: 150%; 
+      overflow: hidden;
+      cursor: url(../image/common/mouse.ico),auto;
+      }
+      
+
+.dis {DISPLAY: block}
+.undis {DISPLAY: none}
+.h2 {
+      font-size: 20px;
+      color: #b60b0b;
+    }
+.bg {
+     width: 100%;
+     height: 100%;
+     background-color:#000;
+     background-repeat: no-repeat;
+     background-position-y: 55px;
+     }
+.text {
+     font-size: 15px;
+     color: white;
+      }  
+#username1,#password1,#username2,#password2,#email{
+     border:0;
+     background-color: #ffffff00;
+     border-bottom: #ff0000 2px solid;
+     margin-top: 0px;
+     }
+     
+#head{
+	overflow:hidden;
+     height: 55px;
+     margin-top: 0;
+     background-color: #ffffffa6;
+     border-bottom: solid 1px #A9A9A9;
+     }
+     
+#conn{
+     width: 70%; 
+     margin-left: 20px;
+     margin-top: 55px;
+     margin-bottom: 250px;
+     overflow: hidden;
+     }
+        
+#logo2{
+     position:fixed;
+     width: 612px;   
+     height: 100px;
+     top: -20px;
+     left: 1400px;
+     }
+     
+#ck_login{
+     float: left;
+     padding-top: 30px;
+     height: 400px;
+     width: 300px;
+     margin-left: 30px;
+     TEXT-ALIGN: center;
+     background-color: #6b6b6b70;
+     border: #69696971 6px solid;
+            }
+
+#ck_register {
+     float: left;
+     padding-top: 30px;
+     height: 400px;
+     width: 300px;
+     margin-left: 30px;
+     TEXT-ALIGN: center;
+     background-color: #6b6b6b70;
+     border: #69696971 6px solid;
+     display: none;
+            }
+            
+        
+#ck_login #ck_register #Login #Regist p{
+     margin-left: 20%;
+     margin-right: 20%;
+     padding: 3px;
+        }
+        
+#ck_login #ck_register p.show0 {
+     background: #dad3d3c9;
+     WIDTH: auto; 
+     height: 22px;
+     CURSOR: pointer;
+            }
+
+#footer p{
+     margin-top: 60px;	
+     color: white;
+     font-size: 15px;
+     text-align: center;
+        }
+.login-button,.regis-button{
+	width:200px;
+	height:100%;
+	border: none;
+	}
+#ck_login #ck_register p.show1 {
+     background-image: url("../image/common/btn_bg.jpg");
+     WIDTH: auto; 
+     height: 22px;
+     COLOR: #ffffffb9;
+     }
+#footer{
+	position:absolute;
+	width:100%;
+	bottom:0;
+    border-top: #b60b0b 3px solid;
+    height: 22%;
+    background-image: url(../image/user_login/footer.jpg)
+        }
+        
+.login-button:hover,.regis-button:hover{
+	background-image: url(../image/common/btn_bg.jpg);
+		}
+		
+.msgimg{
+	position:fixed;
+	left:50px;
+	top:400px;
+    width:90px;
+    height:90px;
+        } 
+        
+.registImg{
+	border:solid 1px #00000000;
+	width: 40px;
+	height: 40px
+}
+
+/*开发制作者桀骜*/
+.create_logo{
+	float: left;
+	margin-left: 40px;
+	margin-top:30px;
+	animation: huangdong 1s ease-in-out 0s infinite;
+}
+/*图片晃动效果*/
+@keyframes huangdong {
+    0% {
+        transform: scale(1);
+        /*开始为原始大小*/
+        }
+    25% {
+        transform: scale(1.1);
+        /*放大1.1倍*/
+        }
+    50%,
+    70%,
+    90% {
+        transform: scale(1.1) rotate(3deg);
+        }
+    60%,
+    80% {
+        transform: scale(1.1) rotate(-3deg);
+        }
+    }

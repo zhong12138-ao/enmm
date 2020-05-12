@@ -1,0 +1,143 @@
+@font-face {
+    font-family: lishu; 
+    src: url(../font/lishu.TTF);
+    }
+@font-face {
+    font-family: gupu; 
+    src: url(../font/gupu.ttf);
+}
+
+::-webkit-scrollbar{
+    display:none;
+    }
+
+
+body{
+    margin: 0;
+    overflow-y: hidden;
+    background-attachment: fixed;
+    background-image: url(../image/game_exchangeInfo/game_exchangeInfo_bg.jpg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    cursor: url(../image/common/mouse.ico),auto;
+}
+
+#head{
+    position: fixed;
+    top:10px;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #000000 0;  
+    z-index: 4;
+}
+
+#head p{
+    margin: 0;
+    font-size: 70px;
+    text-shadow:0 4px 2px #fafa32ca;
+    color: #fff;
+    font-family: lishu;
+}
+
+#back{
+    position:fixed;
+    text-decoration:none;
+    top:100px;
+    right:20px;
+    z-index: 2;
+}
+
+#back img{ 
+    width: 70px;
+    height: 70px;
+}
+
+
+/* 提示信息 */
+#msg{
+    position: absolute;
+    top: 82%;
+    left: 55%;
+    font-size: 35px;
+    color: red;
+}
+
+#conn{
+    position: fixed;
+    top: 100px;
+    height: 800px;
+    width: 90%;
+    left: 120px;
+    background: #000000a9;
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: gupu;
+}
+#i1{
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 300px;
+    height: 400px;
+}
+
+.simg{
+    width:170px;
+    height:250px;
+}
+
+#i2 {
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+}
+
+#i3{
+    position: absolute;
+    bottom: 20px;
+    left: 360px;
+}
+
+#i4{
+    position: absolute;
+    bottom: 20px;
+    left: 660px;
+}
+
+#tip{
+    position: absolute;
+    bottom:120px;
+    right: 280px;
+}
+
+#button{
+    position:absolute;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    text-decoration:none;
+    background-image: url(../image/common/btn_bg1.png);
+    background-size:100% 100%;
+}
+
+#content{
+    position: absolute;
+    width: 72%;
+    height: 400px;
+    right: 60px;
+    top: 60px;
+    border-radius: 5px;
+    background-image: url(../image/game_exchangeInfo/content_bg.png);
+    background-size:100% 100%;
+}
+
+#content p{
+	color: white;
+	font-size: 25px;
+	margin: 20px;
+	font-family:gupu;
+}
+

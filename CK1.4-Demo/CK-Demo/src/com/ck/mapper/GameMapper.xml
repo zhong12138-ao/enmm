@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ck.dao.GameMapper">
+	
+	
+	<!-- 抽取回合单卡-->
+	<select id="getOneCCByRank" parameterType="int" resultType="com.ck.pojo.Card_type">
+		select * from card where generals_star=#{generals_star} order by rand() limit 1
+	</select>
+	
+</mapper>

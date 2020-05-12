@@ -1,0 +1,131 @@
+@font-face {
+    font-family: lishu; 
+    src: url(../font/lishu.TTF);
+    font-family: gupu; 
+    src: url(../font/gupu.ttf);
+    }
+
+::-webkit-scrollbar{
+    display:none;
+    }
+#head{
+    position: absolute;
+    top:10px;
+    width: 1920px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #000000 0;  
+    z-index: 4;
+}
+
+#head p{
+    margin: 0;
+    font-size: 70px;
+    text-shadow:0 4px 2px #fafa32ca;
+    color: #fff;
+    font-family: lishu;
+}
+
+#msg p{
+	position:fixed; 
+	top:-20px;
+	left:0px;
+	width:10%;
+	text-align:center;
+	color:green;
+	font-size:40px;
+	font-family: gupu;
+}
+
+#back{
+    position:fixed;
+    text-decoration:none;
+    top:100px;
+    right:20px;
+    z-index: 2;
+}
+
+#back img{ 
+    width: 70px;
+    height: 70px;
+}
+
+#conn{
+    float: left;
+    position: relative;
+    padding-left:100px;
+    padding-right:100px;
+    z-index: 1;
+    top: 100px;
+    bottom:60px;
+    left: 0px;
+    height:860px;
+    width: 1720px;
+    overflow: auto; 
+     
+}
+
+body{
+    margin: 0;
+    background-attachment: fixed;
+    background-image: url(../image/common/cardBG.png) ;
+    background-repeat: no-repeat;
+    cursor: url(../image/common/mouse.ico),auto;
+}
+#back_btn{
+	display: none;
+}
+
+#box{
+	position:relative;
+	border-radius:10px;
+	padding:20px;
+	width: 300px;
+	height: 300px;
+	display: inline-block;
+	/* Ԫ�ر��鿴λ�õ���ͼ */
+    perspective: 900px;
+}
+
+#box img{
+	width: 270px;
+	height: 250px;
+}
+
+#box p{
+	position:relative;
+	top:-45px;
+	text-align: center;
+	color: white;
+	font-family:lishu;
+	font-size: 30px;
+}
+#box span{
+	text-align: center;
+	font-family:gupu;
+	font-size: 40px;
+	color:white;
+	text-shadow:0 4px 2px rgba(0,0,0,0.8);
+}
+
+.imgLQ{
+    position: relative;
+    top: 70%;
+    left: 40%;
+    width: 270px;
+    height: 250px;	
+    margin: -220px 0 0 -100px;
+	box-shadow: -7px 10px 10px #333;
+	transform: rotateX(60deg) rotateY(3deg) rotateZ(-25deg);
+	transform-origin:50% 50%;
+	transition: all 1s;
+}
+#box:hover .imgLQ {
+    transform: rotate3d(0, 0, 0, 0deg);	
+    box-shadow: -100px 100px 20px #fff;
+    }
+
+p yellow{
+	color:yellow;
+}

@@ -1,0 +1,287 @@
+@font-face {
+    font-family: lishu; 
+    src: url(../font/lishu.TTF);
+    }
+@font-face {
+    font-family: tanyuqiuling; 
+    src: url(../font/tanyuqiuling.ttf); 
+    }
+@font-face {
+    font-family: gupu; 
+    src: url(../font/gupu.ttf);
+    }  
+::-webkit-scrollbar{
+    display:none;
+    /* 闅愯棌婊氬姩鏉� */
+    }
+  
+body{
+    margin: 0;
+    background: #ffffff;
+    overflow-y: hidden;
+    background-attachment: fixed;
+    background-image: url(../image/game_mode1/game_mode_1BG.png) ;
+    background-repeat: no-repeat;
+    background-size:100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: url(../image/common/mouse.ico),auto;
+}
+#back_btn{
+	display: none;
+}
+
+
+#head{
+    position: absolute;
+    top:10px;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #000000 0;  
+    z-index: 4;
+}
+
+#head p{
+    margin: 0;
+    font-size: 70px;
+    text-shadow:0 4px 2px #fafa32ca;
+    color: #fff;
+    font-family: lishu;
+}
+
+#title {
+   position:absolute;
+   z-index:1;
+   top:100px;
+   width:100%;
+   left:800px;
+   font-family: tanyuqiuling;
+}
+
+#rank{
+	position:absolute;
+	z-index:1;
+	top:90px;
+	right:220px;
+}
+
+#rank p{
+	font-family: lishu;
+	font-size: 40px;
+	color: 	#FF7F50;
+}
+
+#rank img{
+	position: relative;
+	top:-110px;
+	left:250px;
+	width:100px;
+	height: 100px;
+}
+
+#skillShow{
+	position: absolute;
+	z-index: 2;
+	background-image: url("../image/game_mode1/game_skillShowBG.png");
+	background-size:100%;
+	width:600px;
+	height: 200px;
+	top:280px;
+	right:1050px;
+	display: none;
+}
+
+#skillShowP{
+	position: relative;
+	font-family:lishu;
+	z-index: 2;
+	font-size:80px;
+	text-align:center;
+	top:65px;
+	width:600px;
+	height:200px;
+	color: black;
+}
+
+@keyframes skillshow {
+	0%{right:-1000px;background-image: url("../image/game_mode1/game_skillShowBG2.png");}
+    25%{right:1050px;background-image: url("../image/game_mode1/game_skillShowBG.png");}
+    75%{right:1050px;background-image: url("../image/game_mode1/game_skillShowBG.png");}
+    100%{right:3000px;background-image: url("../image/game_mode1/game_skillShowBG2.png");}
+    }
+
+#leftCon{
+	position: absolute;
+	background-image:url("../image/game_mode1/game_skillBtnsBG2.png");
+	background-size:100% 100%;
+	text-align:center;
+	top: 100px;
+    left: 30px;
+    height:780px;
+    width: 200px;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn{
+	position: relative;
+	text-align:center;
+    height:80px;
+    width: 200px;
+    float: right;
+    margin-top: 20px;
+    background-image: url("../image/common/game_btnBG1.png");
+    background-size: 100% 100%;
+    font-family: gupu;
+    font-size: 40px;
+    transition:all 0.5s;
+}
+.btn:hover{
+	background-image: url("../image/common/game_btnBG2.png");
+}
+.btn p{
+	position: relative;
+	top:-20px;
+    color: black;    
+}
+
+
+.skillsBTN{
+	position: relative;
+	text-align:center;
+    height:80px;
+    width: 200px;
+    float: left;
+    margin-bottom: 20px;
+    font-family:gupu;
+    background-image: url("../image/common/btn_bg1.png");
+    background-size:100% 100%;
+    transition:all 0.5s;
+}
+.skillsBTN:hover{
+	background-image: url("../image/common/btn_bg2.png");
+}
+
+.skillsBTN span{
+	position: relative;
+	top:18px;
+    color: white;
+    font-size: 40px;
+}
+
+
+
+
+
+#conn{
+  position:absolute;	
+  overflow:hidden;
+  width:84%;
+  bottom:70px;
+  right:30px;
+  top:140px;
+  border-radius: 20px;
+}
+
+
+#content{
+  position:relative;
+  padding:20px;
+  width: 500px;
+  height: 600px;
+  top:50px;
+  left:537px;
+  background: #0a0101af;
+  overflow-x: hidden;
+  border-radius: 20px;
+}
+
+p xitong{
+	color: yellow;
+}
+
+p jineng{
+	color: green;
+}
+
+p lv{
+	color: #B22222;
+	font-size: 25px;
+}
+
+p sk3{
+	color:#3CB371;
+	font-size:30px;
+	font-family: lishu;
+	background-image: url("../image/game_mode1/game_skillNameBG.png");
+	background-size: 100%;
+}
+
+#computer{
+    right:20px;
+}
+#player{
+    left:20px;
+}
+.fighter {
+	position:absolute;
+	width:500px;
+	height:800px;
+	top:10%;
+}
+.fighter p{
+	position:relative;
+	font-size: 20px;
+	text-align:center;
+	color:white;
+}
+.fighter img{ 
+    position:relative;
+    width: 300px;
+    height: 450px;
+}
+
+.cardbord{
+	position:absolute;
+	width:290px;
+	height:395px;
+	top:4%;
+}
+#cb1 {
+	left:125px;
+}
+#cb2 {
+	right:125px;
+}
+
+#bord{
+	position:relative;
+	overflow:hidden;
+    left:150px;
+    width: 200px;
+    height: 300px;
+    box-shadow: #290808 0 0 100px inset;
+    border-radius: 10px;
+}
+#show{
+	position:relative;
+	top:-50px;
+	left:-50px;
+    width: 300px;
+    height: 450px;
+}
+
+
+.killed{
+  position:absolute;
+  width: 400px;
+  height: 310px;
+  top:80px;
+  left:100px;
+  z-index: 1;
+}

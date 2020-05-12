@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ck.dao.UserMapper" >
+  <!-- 客户登录操作 -->
+	<select id="findByUsername" parameterType="String" resultType="com.ck.pojo.User">
+		select * from user where user_name = #{user_name}
+	</select>
+	<!-- 添加用户 -->
+	<insert id="add" parameterType="com.ck.pojo.User">
+		insert into user(user_id,user_name,user_password,user_level,user_money,user_points,user_image,user_cardNum,c_times,state,code,email,dice_point,login_day,sign_state,last_signin_time,user_exp) 
+				values(#{user_id},#{user_name},#{user_password},#{user_level},#{user_money},#{user_points},#{user_image},#{user_cardNum},#{c_times},#{state},#{code},#{email},#{dice_point},#{login_day},#{sign_state},#{last_signin_time},#{user_exp})
+	</insert>
+	<!-- 根据code查询用户 -->
+	<select id="getUserByCode" parameterType="java.lang.String" resultType="com.ck.pojo.User">
+		select * from user where code = #{code}
+	</select>
+	<!-- 更新数据 -->
+	<update id="update" parameterType="com.ck.pojo.User">
+		update user set user_name=#{user_name},user_password=#{user_password},user_level=#{user_level},c_times=#{c_times},state=#{state},code=#{code},
+		user_cardNum=#{user_cardNum},user_money=#{user_money},user_points=#{user_points},dice_point=#{dice_point},
+		login_day=#{login_day},sign_state=#{sign_state},last_signin_time=#{last_signin_time},user_exp=#{user_exp} where user_id=#{user_id}
+	</update>
+	<!-- 查询用户信息 -->
+	<select id="getUserInfo" parameterType="com.ck.pojo.User" resultType="com.ck.pojo.User">
+		select * from user where user_id=#{user_id}
+	</select>
+	
+	<!-- 每天更新卡牌购买状态为0 -->
+	<update id="updateAllCard_piece" >
+		update card_piece set state=0
+	</update>
+	
+	<!-- 更新用户技能 -->
+	<insert id="update_userSkill" parameterType="com.ck.pojo.User_skill">
+		insert into user_skill values(null,#{user_id},#{skill_id},#{skill_name}) 
+	</insert>
+	
+	<!-- 查询技能表技能 -->
+	<select id="seleteSkill" parameterType="int" resultType="com.ck.pojo.Game_skill">
+		select * from skill where id=#{id}
+	</select>
+	
+	<!-- 查询用户技能表技能 -->
+	<select id="seleteUserSkill" resultType="com.ck.pojo.User_skill">
+		select * from user_skill where user_id=#{user_id} and skill_id=#{skill_id} 
+	</select>
+	
+	<!-- 查询用户技能表所拥有的技能 -->
+	<select id="seleteUserAllSkill" resultType="com.ck.pojo.User_skill">
+		select * from user_skill where user_id=#{user_id}
+	</select>
+	
+	<!-- 查询用户所有碎片 -->
+	<select id="getUserPiece" parameterType="String" resultType="com.ck.pojo.User_piece">
+		select * from user_piece where user_id=#{user_id} 
+	</select>
+</mapper>

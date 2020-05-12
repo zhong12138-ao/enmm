@@ -1,0 +1,172 @@
+@font-face {
+    font-family: lishu; 
+    src: url(../font/lishu.TTF);
+    }
+@font-face {
+    font-family: gupu; 
+    src: url(../font/gupu.ttf);
+    }
+
+::-webkit-scrollbar{
+    display:none;
+    }
+
+
+body{
+    margin: 0;
+    overflow-y: hidden;  
+    ondragstart:false;
+    background-image: url("../image/game_menu/game_menuBG.png");
+    background-repeat: no-repeat;
+    user-select:none;
+    cursor: url(../image/common/mouse.ico),auto;
+}
+#back_btn{
+	display: none;
+}
+
+#head{
+    position: fixed;
+    top:10px;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    background-color: #000000 0;  
+    z-index: 4;
+}
+
+#head p{
+    margin: 0;
+    font-size: 70px;
+    text-shadow:0 4px 2px #fafa32ca;
+    color: #fff;
+    font-family: lishu;
+}
+
+#msg {
+	color: white;
+	font-size: 25px;
+	position: fixed;
+	top:0px;
+	left:10px;
+	font-family: gupu;
+}
+
+#conn{
+    position: absolute;
+    background-color:#000000A2;
+    top:100px;
+    left:100px;
+    right: 100px;
+    bottom: 100px;
+    border-radius: 20px;
+}
+
+#headImg{
+	position: absolute;
+	text-align:center;
+	top:130px;
+	left:50px;
+	width:400px;
+	height:400px;
+}
+#headImg img{
+	width:400px;
+	height:400px;
+}
+#headImg p{
+	text-align: center;
+	color: white;
+	font-size: 50px;
+	font-family: gupu;
+}
+
+#information{
+	position: absolute;
+	top:100px;
+	left:500px;
+	height: 600px;
+	width: 1100px;
+}
+#information p{
+	margin-left:30px;
+	color: white;
+	font-size: 30px;
+	font-family: gupu;
+}
+
+#ename,#epassword{
+	display: none;
+}
+
+p yellow{
+	color:yellow;
+}
+
+.btn p{
+	position: relative;
+	top:-105px;
+    color: black;
+    font-family: gupu;
+    font-size: 40px;
+}
+
+.btn img{
+	position: relative;
+    height:80px;
+    width: 200px;
+}
+
+.btn{
+	position: absolute;
+	text-align:center;
+    height:80px;
+    width: 200px;
+    left: 1300px;
+    margin-top: 200px;
+    display: none;
+}
+#btn{
+	bottom:120px;
+}
+#cancel{
+	bottom:20px;
+}
+
+/* 去除input框 */
+-web-kit-appearance:none;
+-moz-appearance: none;
+.input_control{
+  width:200px;
+  margin:20px auto;
+}
+input[type="text"]{
+  box-sizing: border-box;
+  text-align:center;
+  font-size:30px;
+  height:30px;
+  border-radius:4px;
+  border:1px solid #c8cccf;
+  color:#6a6f77;
+  -web-kit-appearance:none;
+  -moz-appearance: none;
+  outline:0;
+  padding:0;
+  text-decoration:none;
+  width:200px;
+  text-align: left;
+}
+input[type="text"]:focus{
+  border:1px solid #ff7496;
+}
+::-moz-placeholder {
+  color: #6a6f77;
+}
+::-moz-placeholder {
+  color: #6a6f77;
+}
+input::-webkit-input-placeholder{
+  color: #6a6f77;
+}
+
